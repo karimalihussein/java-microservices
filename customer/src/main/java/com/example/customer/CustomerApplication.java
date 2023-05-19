@@ -1,8 +1,14 @@
 package com.example.customer;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableEurekaClient
+@EnableFeignClients(
+        basePackages = "com.example.clients"
+)
 public class CustomerApplication {
     public static void main(String[] args) {
         org.springframework.boot.SpringApplication.run(CustomerApplication.class, args);
