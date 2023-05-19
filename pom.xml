@@ -14,6 +14,7 @@
     <modules>
         <module>customer</module>
         <module>fraud</module>
+        <module>eureka-server</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,6 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boon.maven.plugin.version>2.6.0</spring.boon.maven.plugin.version>
         <spring.boot.dependency.version>2.6.0</spring.boot.dependency.version>
+        <spring.cloud-version>2021.0.0</spring.cloud-version>
     </properties>
 
     <dependencyManagement>
@@ -32,7 +34,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <dependencies>
